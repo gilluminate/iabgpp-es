@@ -5,14 +5,14 @@ npx tsc -p tsconfig.json
 
 npx tsc -p tsconfig-cjs.json
 
-FILES=$(find lib/cjs -name "*.js")
+# FILES=$(find lib/cjs -name "*.js")
 
-for FILE in $FILES; do
+# for FILE in $FILES; do
 
-  echo "Minifying $FILE"
-  npx terser $FILE --ecma 5 -m -c -o $FILE
+#   echo "Minifying $FILE"
+#   npx terser $FILE --ecma 5 -m -c -o $FILE
 
-done
+# done
 
 cat >lib/cjs/package.json <<!EOF
 {

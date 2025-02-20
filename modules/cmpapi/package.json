@@ -18,6 +18,8 @@
   ],
   "scripts": {
     "build": "./build",
+    "dev": "rm -rf ./lib && npm run build && rm -rf ~/GitHub/fides/clients/fides-js/src/lib/gpp/modules/cmpapi/lib && cp -r ./lib ~/GitHub/fides/clients/fides-js/src/lib/gpp/modules/cmpapi/ && cd ~/GitHub/fides/clients/fides-js && NODE_ENV=development npx rollup -c && cd ~/GitHub/iabgpp-es/modules/cmpapi",
+    "watch": "npx nodemon --watch src --ext ts,js --exec 'npm run dev'",
     "test": "npx mocha --timeout 10000"
   },
   "devDependencies": {
